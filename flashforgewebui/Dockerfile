@@ -6,9 +6,9 @@ ENV DATA_DIR=/data
 
 RUN apt-get update && apt-get install -y --no-install-recommends curl ca-certificates \
     && case "${BUILD_ARCH}" in \
-         aarch64) BIN="flashforge-webui-linux-arm64" ;; \
-         armv7)   BIN="flashforge-webui-linux-armv7" ;; \
-         amd64)   BIN="flashforge-webui-linux-x64" ;; \
+         aarch64) BIN="flashforge-webui-linux-arm64.bin" ;; \
+         armv7)   BIN="flashforge-webui-linux-armv7.bin" ;; \
+         amd64)   BIN="flashforge-webui-linux-x64.bin" ;; \
          *) echo "Unsupported arch: ${BUILD_ARCH}" && exit 1 ;; \
        esac \
     && curl -fL -o /usr/local/bin/flashforge-webui \
